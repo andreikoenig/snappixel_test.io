@@ -18,6 +18,13 @@
             return randomEmail;
         }
 
+        function getRandomPhone() {
+            const randomNumber = Math.floor(Math.random() * 10000000000);
+            const formattedPhoneNumber = String(randomNumber).slice(0, 10);
+
+            return formattedPhoneNumber;
+        }
+
         function onClickPurchase() {
             snpatr('track', 'PURCHASE');
         }
@@ -36,10 +43,12 @@
         u.parentNode.insertBefore(r,u);})(window,document,
         'https://sc-static.net/scevent.min.js');
 
+        console.log('----------------');    
         snaptr('init', 'c8808163-3e74-4a1e-9dda-a0d5b3d941ea', {
-        'user_email': getRandomEmail() 
+        'user_email': getRandomEmail(),
+        'user_phone_number': getRandomPhone() 
         });
-        console.log('track-------');
+
 
         snaptr('track', 'PAGE_VIEW');
 
